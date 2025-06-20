@@ -1,0 +1,476 @@
+/* Container */
+.container {
+  max-width: 1250px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Judul halaman */
+.page-title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: -20px;
+  margin-left: 2px;
+  text-align: left;
+}
+
+/* Tombol */
+.btn-add-room {
+  background-color: #0e60b8;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 2px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-add-room:hover {
+  background-color: #0056b3;
+}
+
+/* Modal */
+.custom-modal {
+ position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.custom-modal-content {
+  background: white;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Close button */
+.close-modal {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.7rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #666;
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.close-modal:hover {
+  color: #000;
+}
+
+/* Form styles */
+.form-modal label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.form-modal input[type="text"],
+.form-modal input[type="number"],
+.form-modal select {
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  margin-top: 0.3rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-modal input[type="text"]:focus,
+.form-modal input[type="number"]:focus,
+.form-modal select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bffaa;
+}
+
+/* Footer buttons */
+.modal-footer {
+  margin-top: 1.7rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #545b62;
+}
+
+/* Table styling */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px; /* agar overflow scroll juga rounded */
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.05);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: separate; /* biar border-radius bisa jalan */
+  border-spacing: 0; /* hilangkan jarak antar sel */
+  font-size: 1.1rem; /* font size diperbesar */
+  border: 1.5px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden; /* supaya border radius efek */
+  background-color: rgba(255, 255, 255, 0.832);
+}
+
+/* Header */
+.custom-table thead tr {
+  background-color: #85b8f7;
+  color: #444;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 0.9rem 1.3rem; /* padding diperbesar */
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* Border radius di header kiri atas & kanan atas */
+.custom-table thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.custom-table thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+/* Border radius di footer kiri bawah & kanan bawah */
+.custom-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+.custom-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+/* Hover effect baris */
+.custom-table tbody tr:hover {
+  background-color: #ecececd3; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover efek untuk link edit */
+.edit-btn:hover {
+  color: #003d99;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.edit-dialog {
+  display: none; /* default hidden */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px 30px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  z-index: 1001;
+  width: 480px;
+  max-width: 90%;
+  transition: opacity 0.3s ease;
+}
+
+.edit-dialog.show {
+  display: block;
+  opacity: 1;
+}
+
+.edit-form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.edit-form input,
+.edit-form select {
+  width: 100%;
+  padding: 7px 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.edit-dialog-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.edit-dialog-buttons button {
+  padding: 7px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.edit-dialog-buttons button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+.edit-dialog-buttons button#editCancelBtn {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Overlay background */
+.edit-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.edit-overlay.show {
+  display: block;
+}
+.fa-trash {
+     font-size: 1.3rem;
+
+}
+
+.edit-btn,
+.delete-btn {
+  margin-right: 10px; /* kasih jarak kanan supaya ada spasi */
+     font-size: 1.3rem;
+
+  text-decoration: none;
+  display: inline-block;
+}
+
+.delete-btn {
+  margin-right: 0; /* tombol terakhir gak perlu margin kanan */
+}
+
+/* pagination*/
+
+.pagination {
+  display: flex;
+  justify-content: right;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+  gap: 6px;
+}
+
+.pagination li {
+  display: inline-block;
+}
+
+.pagination li a,
+.pagination li span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.pagination li.active span,
+.pagination li a:hover {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination li.disabled span {
+  color: #aaa;
+  background-color: #e9e9e9;
+  cursor: not-allowed;
+}
+
+form input[type="text"] {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+/*  + Tambah Ruangan dan form search */
+.header-actions {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-bottom: 1.5rem; 
+  gap: 1rem; 
+}
+
+/* Form dengan flex untuk input dan tombol */
+.header-actions form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; 
+}
+
+/* Atur input search agar tinggi sejajar dengan tombol */
+.header-actions form input[type="text"] {
+  max-width: 250px;
+  padding: 0.5rem 0.75rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  padding: 0.6rem 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.header-actions form input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bffaa;
+}
+
+.header-actions form button.btn-primary {
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* --- MEDIA QUERY untuk Responsif --- */
+
+@media (max-width: 768px) {
+ 
+ .custom-table td {
+    padding: 0.7rem 0.5rem;
+    font-size: 13px;
+  }
+  
+  .custom-table td:last-child {
+    /* Pastikan kolom aksi tidak terlalu sempit */
+    min-width: 80px;
+    text-align: center;
+  }
+  .edit-btn,
+  .delete-btn {
+    font-size: 1.3rem;
+    margin: 0 6px 0 0;
+    vertical-align: middle;
+    display: inline-block;
+  }
+  .edit-btn i,
+  .delete-btn i {
+    font-size: 1.3rem;
+    vertical-align: middle;
+  }
+  .custom-table button[type="submit"] {
+    padding: 0;
+    margin: 0 0 0 6px;
+    font-size: 1.3rem;
+    vertical-align: middle;
+  }
+  .page-title {
+    font-size: 22px;
+    text-align: left;
+  }
+
+  .header-actions {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .header-actions form {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .btn-add-room
+ {
+    width: 105px;
+    height: 50px;
+  }
+
+  .header-actions form input[type="text"] {
+    margin-left: -2%;
+      width: 100%;
+    max-width: 100%;
+  }
+
+   .header-actions form button.btn-primary {
+    width: 50%;
+  }
+
+
+  /* Table scroll horizontal */
+  .table-wrapper {
+    overflow-x: auto;
+    
+  }
+
+  .custom-table {
+    font-size: 14px;
+  }
+
+  /* Modal lebih kecil */
+  .custom-modal-content {
+    max-width: 95vw;
+    padding: 1.5rem 1.8rem;
+  }
+}

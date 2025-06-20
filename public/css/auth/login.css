@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-color: #1B0DAB;
+    background-size: 600% 600%;
+}
+
+
+.login-container {
+    width: 100%;
+    max-width: 650px;
+    padding: 40px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo Image */
+.logo-image {
+    width: 200px;
+    margin-bottom: -20px;
+    margin-top: -15%;
+}
+
+/* Judul */
+.login-container h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Form */
+form {
+    width: 90%;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #fdf7f7;
+}
+
+.input-group input {
+    padding: 14px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #1B0DAB;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+.input-group input::placeholder {
+    color: #fcfcfc;
+}
+
+
+.remember-me{
+    color: white;
+}
+
+button[type="submit"] {
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px;
+    background-color: #1E1764;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+button[type="submit"]:hover {
+    background-color: #090442;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-guest {
+  display: inline-block;
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px;
+    background-color: #1B0DAB;
+    color: white;
+    border: 0.5px solid white; 
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-guest:hover {
+  background-color: #1E1764; /* Warna saat hover */
+}
+
+.alert-success {
+    margin-top: 20px;
+    padding: 10px;
+    color: #00c32d;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.alert-danger {
+    margin-top: 20px;
+    padding: 10px;
+    color: #ea0000;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+
+@media (max-width: 768px) {
+  .login-container {
+    padding: 32px 24px;
+  }
+
+  .logo-image {
+    width: 160px;
+    margin-top: -10%;
+    margin-bottom: -16px;
+  }
+
+  .login-container h2 {
+    font-size: 22px;
+  }
+
+  .input-group label {
+    font-size: 14px;
+  }
+
+  .input-group input {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  button[type="submit"],
+  .btn-guest {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 28px 18px;
+  }
+
+  .logo-image {
+    width: 130px;
+    margin-top: -8%;
+    margin-bottom: -14px;
+  }
+
+  .login-container h2 {
+    font-size: 20px;
+  }
+
+  .input-group label {
+    font-size: 13px;
+  }
+
+  .input-group input {
+    font-size: 13px;
+    padding: 11px;
+  }
+
+  button[type="submit"],
+  .btn-guest {
+    font-size: 13px;
+    padding: 11px;
+  }
+
+  .signup-text {
+    font-size: 12px;
+  }
+}

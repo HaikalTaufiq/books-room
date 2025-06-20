@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: center;  /* container di tengah horizontal */
+    align-items: center;      /* container di tengah vertikal */
+}
+
+.register-container {
+    width: 1220px;
+    max-width: none;  
+    height: 600px;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 40px 50px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: 1%;
+}
+
+.register-container h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-align: center;
+    color: #000;
+}
+
+form {
+    width: 100%;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #000;
+
+}
+
+.input-group input {
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 10px;
+       border: 1px solid #ccc;
+
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    opacity: 0.9;
+}
+
+.input-group input::placeholder {
+    color: #000;
+    opacity: 0.6;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn1[type="submit"] {
+    width: 100%;
+    padding: 16px;
+    background-color: #015ec2;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 2%;
+    transition: background-color 0.3s ease;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+button[type="submit"]:hover {
+    background-color: #007bff;
+}
+
+.signup-text {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.signup-text a {
+    color: #061C20;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+/* --- Responsive --- */
+@media (max-width: 1220px) {
+    .register-container {
+        width: 100%;       /* Container mengecil mengikuti layar */
+        max-width: 1220px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .register-container {
+        padding: 30px;
+        max-width: 800px;
+        width: 100%;        /* Lebih fleksibel */
+    }
+
+    .input-group input {
+        font-size: 15px;
+        padding: 14px;
+    }
+
+    .register-container h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .register-container {
+
+        padding: 25px 20px;
+        max-width: 600px;
+        width: 420px;
+        height: auto;
+        border-radius: 16px;
+    }
+
+    .input-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .input-group {
+        flex: none;      /* Disable flex grow supaya lebar 100% */
+        width: 100%;
+    }
+
+    .register-container h2 {
+        font-size: 22px;
+        margin-top: 10%;
+    }
+
+    .input-group label {
+        font-size: 14px;
+    }
+
+    .input-group input {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    button[type="submit"] {
+        font-size: 15px;
+        padding: 14px;
+    }
+
+    .signup-text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-container {
+        padding: 20px 15px;
+        width: 100%;
+    }
+
+    .register-container h2 {
+        font-size: 20px;
+    }
+
+    button[type="submit"] {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .signup-text {
+        font-size: 12px;
+    }
+}

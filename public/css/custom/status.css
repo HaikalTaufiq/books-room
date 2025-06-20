@@ -1,0 +1,316 @@
+
+.status-page {
+    max-width: 1280px;
+    margin: -10px auto;
+    padding: 30px;
+    border-radius: 16px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.status-title {
+       font-size: 30px;
+    font-weight: 600;
+    margin-left: 2px;
+    text-align: left;
+}
+
+.status-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    background: white;
+    overflow: hidden;
+}
+
+.status-table th,
+.status-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.status-table thead {
+    background-color: #85b8f7;
+}
+
+.status-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.status.approved {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status.decline {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.edit-btn {
+    color: #007bff;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 8px;
+}
+
+.edit-btn:hover {
+    color: #0056b3;
+}
+
+.status-dropdown {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.delete-btn {
+    background-color: #e3342f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #cc1f1a;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-container {
+  margin-top: 5%;
+    background: white;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+    padding: 20px;
+    border-radius: 12px;
+    width: 400px;
+    max-width: 90%;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-save {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal-close {
+    background-color: #ccc;
+    color: black;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/*Pagination*/
+/* Container pagination */
+.pagination {
+    display: flex;
+    justify-content: right;
+    margin-top: 1rem;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Setiap tombol pagination */
+.pagination li {
+    margin: 0 0.25rem;
+}
+
+/* Link dan tombol pagination */
+.pagination li a,
+.pagination li span {
+    color: #007bff;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    display: inline-block;
+    min-width: 36px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.pagination li a:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Active page */
+.pagination li.active span {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    cursor: default;
+}
+
+/* Disabled state */
+.pagination li.disabled span {
+    color: #6c757d;
+    cursor: not-allowed;
+    background-color: #fff;
+    border-color: #dee2e6;
+}
+
+.header-actions {
+  /* Meski sekarang hanya form, tapi biar fleksibel dan rapi */
+  display: flex;
+  justify-content: space-between; /* karena hanya ada form */
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.header-actions form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-actions form input[type="text"] {
+  max-width: 250px;
+  padding: 0.6rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.header-actions form input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bffaa;
+}
+
+.header-actions form button.btn-primary {
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  background-color: #007bff;
+  color: white;
+}
+
+.header-actions form button.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Table wrapper untuk mobile */
+@media (max-width: 768px) {
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+  }
+
+  .status-table {
+    min-width: 600px;
+    font-size: 14px;
+  }
+
+  .status-page {
+    padding: 20px 16px; /* kurangi padding di mobile */
+  }
+
+  .status-title {
+    font-size: 24px;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .header-actions form {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .header-actions form input[type="text"] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .header-actions form button.btn-primary {
+    width: 30%;
+  }
+
+  
+  .status-table td:last-child {
+    min-width: 100px;
+    text-align: center;
+  }
+  .edit-btn,
+  .delete-btn {
+    font-size: 1.3rem;
+    margin: 0 6px 0 0;
+    vertical-align: middle;
+    display: inline-block;
+  }
+  .edit-btn i,
+  .delete-btn i {
+    font-size: 1.3rem;
+    vertical-align: middle;
+  }
+}
+

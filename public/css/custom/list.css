@@ -1,0 +1,171 @@
+/* Reset margin & padding body tetap sama */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Container utama */
+.container-ruangan {
+    width: 100%;
+    max-width: 1190px;
+    margin: auto;
+    padding: 30px 10px; /* beri padding kiri kanan agar tidak nempel di tepi */
+    min-height: 100vh; /* pakai min-height supaya tetap tinggi */
+    margin-bottom: 1%;
+}
+
+/* Judul */
+.judul-halaman {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* List card ruangan */
+.ruangan-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Card */
+.ruangan-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex-wrap: wrap;
+    margin-bottom: 2%;
+}
+
+/* Hover efek */
+.ruangan-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Bagian info */
+.ruangan-info {
+    flex: 1;
+    min-width: 250px;
+    margin-right: 20px; /* beri jarak kanan */
+}
+
+.ruangan-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.6rem;
+    color: #2c3e50;
+}
+
+.ruangan-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Bagian actions */
+.ruangan-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 200px;
+    flex-shrink: 0; /* supaya gak mengecil */
+}
+
+.btn {
+    padding: 10px 16px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #04045c;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #00009b;
+}
+
+.btn-secondary {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background-color: #cfcfcf;
+}
+
+/* Responsive untuk tablet */
+@media (max-width: 1024px) {
+    .container-ruangan {
+        padding: 30px 16px;
+    }
+
+    .ruangan-info {
+        margin-right: 15px;
+    }
+
+    .ruangan-actions {
+        min-width: 150px;
+        gap: 8px;
+    }
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+    .ruangan-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .ruangan-info {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .ruangan-actions {
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px;
+        min-width: auto;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .btn {
+        flex: 1 1 auto; /* agar tombol bisa melebar jika memungkinkan */
+        text-align: center;
+    }
+}
+
+/* Extra small mobile (optional) */
+@media (max-width: 400px) {
+    .judul-halaman {
+        font-size: 2rem;
+        padding: 0 10px;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}

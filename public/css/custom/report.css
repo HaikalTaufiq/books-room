@@ -1,0 +1,275 @@
+
+body {
+    font-family: 'Poppins',  sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Headings */
+h1, h2 {
+       font-size: 24px;
+
+    color: #222;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Filter Buttons */
+.filter-toggle {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    
+}
+.section-divider {
+    border: none;
+    height: 1.5px;
+    background: linear-gradient(to right, #272626, #a8a8a8);
+    margin: 40px 0;
+    border-radius: 4px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 2px solid #85b8f7;
+    background: white;
+    color: #0e60b8;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: #85b8f7;
+    color: #ffffff;
+}
+
+/* Chart Container */
+.chart-container {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 80px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+table thead {
+     background-color: #85b8f7;
+    color: black;
+}
+
+table th  {
+   padding: 14px 16px;
+    text-align: left;
+        border-bottom: 1px solid #ddd;
+        border-left: none;
+        border-right: none;
+
+}
+
+table td {
+     padding: 14px 16px;
+    background-color: #ffffff;
+        border-bottom: 1px solid #ddd;
+             border-left: none;
+        border-right: none;
+
+}
+
+table tbody tr:hover {
+   background-color: #f9f9f9;
+}
+
+
+/* Damage Report Form */
+.damage-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 50px;
+}
+
+.damage-form label {
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: #444;
+}
+
+.damage-form input[type="text"],
+.damage-form input[type="date"],
+.damage-form input[type="file"],
+.damage-form select,
+.damage-form textarea {
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.damage-form input:focus,
+.damage-form select:focus,
+.damage-form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.damage-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.damage-form button {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    align-self: start;
+    transition: background-color 0.3s ease;
+}
+
+.damage-form button:hover {
+    background-color: #218838;
+}
+ .file-upload-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* sembunyikan input file asli */
+  input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+.btn-view-photo  {
+   padding: 7px 20px;
+    color: black;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+        font-family: 'Poppins', sans-serif;
+
+    user-select: none;
+}
+
+  /* label bertindak sebagai tombol */
+  .file-upload-label {
+    padding: 7px 20px;
+    background-color: #85b8f7;
+    color: white;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+
+  .file-upload-label:hover {
+    background-color: #4da8f7;}
+
+.status-dropdown {
+        padding: 5px;
+        border-radius: 12px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+
+    
+/*Pagination*/
+/* Container pagination */
+.pagination {
+    display: flex;
+    justify-content: right;
+    margin-top: 1rem;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Setiap tombol pagination */
+.pagination li {
+    margin: 0 0.25rem;
+}
+
+/* Link dan tombol pagination */
+.pagination li a,
+.pagination li span {
+    color: #007bff;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    display: inline-block;
+    min-width: 36px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.pagination li a:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Active page */
+.pagination li.active span {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    cursor: default;
+}
+
+/* Disabled state */
+.pagination li.disabled span {
+    color: #6c757d;
+    cursor: not-allowed;
+    background-color: #fff;
+    border-color: #dee2e6;
+}
+
+@media (max-width: 768px) {
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+  }
+   .status-table {
+    min-width: 600px;
+    font-size: 14px;
+  }
+}

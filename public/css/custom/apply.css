@@ -1,0 +1,138 @@
+.apply-page {
+    max-width: 1220px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Judul */
+.apply-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Form group */
+.apply-form .form-group {
+    margin-bottom: 20px;
+}
+
+.apply-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Input & select */
+.apply-form input,
+.apply-form select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.apply-form input:focus,
+.apply-form select:focus {
+    border-color: #007bff;
+}
+
+/* Baris form yang punya 2 kolom */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 2%;
+}
+
+/* Setengah kolom */
+.form-group-half {
+    flex: 1;
+}
+
+/* Tombol submit */
+.apply-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #04045c;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.apply-btn:hover {
+    background-color: #000096;
+}
+
+/* -------- RESPONSIVE -------- */
+
+/* Untuk tablet dan layar medium */
+@media (max-width: 1024px) {
+    .apply-page {
+        padding: 30px 20px;
+    }
+
+    .apply-title {
+        font-size: 22px;
+    }
+}
+
+/* Untuk layar kecil dan smartphone */
+@media (max-width: 768px) {
+    /* Form row jadi kolom (stacked) */
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    /* Kurangi padding halaman */
+    .apply-page {
+        padding: 20px 16px;
+        margin: 20px 10px;
+    }
+
+    /* Judul lebih kecil */
+    .apply-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Tombol tetap full width */
+    .apply-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Untuk layar sangat kecil */
+@media (max-width: 400px) {
+    .apply-title {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .apply-form input,
+    .apply-form select {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    .apply-btn {
+        font-size: 13px;
+        padding: 10px 8px;
+    }
+}
