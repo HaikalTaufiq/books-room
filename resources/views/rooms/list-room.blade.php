@@ -44,7 +44,7 @@
         button.addEventListener('click', function(e) {
             if (userRole === 'guest') {
                 e.preventDefault();
-                alert('Silakan login terlebih dahulu untuk mengajukan peminjaman ruangan.');
+                alert('Please log in first to request a room reservation.');
             } else {
                 window.location.href = "/apply";
             }
