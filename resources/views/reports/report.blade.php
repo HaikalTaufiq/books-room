@@ -103,7 +103,7 @@
                         </select>
                     </td>
                     <td>
-                        <form action="{{ route('damageReports.destroy', $report->id) }}" method="POST" onsubmit="return confirm('Apakah kamu yakin ingin menghapus laporan ini?');">
+                        <form action="{{ route('damageReports.destroy', $report->id) }}" method="POST" onsubmit="return confirm('Are you sure want to delete this?');">
                             @csrf
                             @method('DELETE')
                             <button type="submit" style="background:none;border:none; color:red; margin-left:5px;">

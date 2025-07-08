@@ -19,7 +19,7 @@
 
         <div class="form-group">
             <label>Applicant Name</label>
-            <input type="text" name="applicant_name" required>
+            <input type="text" name="applicant_name" value="{{ old('applicant_name', Auth::user()->first_name) }}" required>
         </div>
 
         <div class="form-group">
@@ -67,5 +67,21 @@
     </form>
 </div>
 
+
+<script>
+    document.querySelector('.apply-form').addEventListener('submit', function(e) {
+        const startTime = document.querySelector('input[name="start_time"]').value;
+        const endTime = document.querySelector('input[name="end_time"]').value;
+
+        const start = parseInt(startTime.replace(':', ''), 10);
+        const end = parseInt(endTime.replace(':', ''), 10);
+
+        // 08:00 = 800, 17:00 = 1700
+        if (start < 800 || end > 1700) {
+            e.preventDefault(); // Stop form submit
+            alert("Room usage time is limited to 08:00 - 17:00 only.");
+        }
+    });
+</script>
 
 @endsection
