@@ -72,28 +72,14 @@ class RoomController extends Controller
     public function list()
     {
         $rooms = Room::all();
-        $now = Carbon::now('Asia/Jakarta');
-        $today = $now->toDateString();
-        $currentTime = $now->format('H:i');
-
-        foreach ($rooms as $room) {
-            $isBookedNow = RoomBooking::where('room_name', $room->name)
-                ->where('booking_date', $today)
-                ->where('status', 'approved')
-                ->where('start_time', '<=', $currentTime)
-                ->where('end_time', '>', $currentTime)
-                ->exists();
-
-            // Update status available secara dinamis (hanya untuk tampilan)
-            $room->available = !$isBookedNow;
-        }
 
         return view('rooms.list-room', compact('rooms'));
     }
 
+
     public function apply()
     {
-        $rooms = Room::all();
+        $rooms = Room::where('available', true)->get();
 
         return view('rooms.apply', compact('rooms'));
     }

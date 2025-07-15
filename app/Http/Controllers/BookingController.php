@@ -23,7 +23,7 @@ class BookingController extends Controller
             'room_name' => 'required|string|exists:rooms,name',
             'activity_type' => 'required|string|max:255',
             'usage_capacity' => 'required|integer|min:1',
-            'borrow_date' => 'required|date',
+            'borrow_date' => 'required|date|after_or_equal:today',
             'start_time' => 'required|date_format:H:i',
             'end_time' => 'required|date_format:H:i|after:start_time',
         ]);
@@ -33,6 +33,19 @@ class BookingController extends Controller
         if (!$user) {
             return redirect()->route('login')->with('error', 'You must be logged in to book a room.');
         }
+
+        // Ambil data ruangan berdasarkan nama
+        $room = Room::where('name', $request->room_name)->first();
+
+        if (!$room) {
+            return redirect()->back()->with('error', 'Selected room not found.');
+        }
+
+        // Cek apakah kapasitas yang diminta melebihi kapasitas ruangan
+        if ($request->usage_capacity > $room->capacity) {
+            return redirect()->back()->with('error', 'Requested capacity exceeds room capacity (' . $room->capacity . ' people).');
+        }
+
 
         // Cek konflik jadwal
         $conflict = RoomBooking::where('room_name', $request->room_name)
@@ -62,7 +75,6 @@ class BookingController extends Controller
             'end_time' => $request->end_time,
             'status' => $status, // status otomatis sesuai logika
         ]);
-
 
 
         // Pesan notifikasi sesuai status

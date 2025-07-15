@@ -103,7 +103,7 @@
                         </select>
                     </td>
                     <td>
-                        <form action="{{ route('damageReports.destroy', $report->id) }}" method="POST" onsubmit="return confirm('Are you sure want to delete this?');">
+                        <form action="{{ route('damageReports.destroy', $report->id) }}" method="POST" onsubmit="return confirm('Apakah kamu yakin ingin menghapus laporan ini?');">
                             @csrf
                             @method('DELETE')
                             <button type="submit" style="background:none;border:none; color:red; margin-left:5px;">
@@ -139,11 +139,13 @@
         <select name="room" required>
             <option value="">-- Choose Room --</option>
             @foreach($rooms as $room)
-            <option value="{{ $room->name }}">
+            <option value="{{ $room->name }}"
+                {{ (isset($latestBooking) && $latestBooking->room_name === $room->name) ? 'selected' : '' }}>
                 {{ $room->name }} || {{ $room->location }}
             </option>
             @endforeach
         </select>
+
 
         <label>Damage Type</label>
         <input type="text" name="damage_type" placeholder="Example: AC not working" required>

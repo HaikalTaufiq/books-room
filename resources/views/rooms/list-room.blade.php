@@ -17,18 +17,17 @@
 
             </div>
             <div class="ruangan-actions">
-                <button class="btn btn-primary bookingBtn">
-                    <a href="/apply" class="btn btn-primary">
-                        Book Now
-                    </a>
+                <button
+                    class="btn btn-primary bookingBtn"
+                    data-available="{{ $room->available ? '1' : '0' }}"
+                    data-room-name="{{ $room->name }}">
+                    Book Now
                 </button>
-                <button class="btn btn-secondary">
-                    @if($room->available)
-                    <span class="badge bg-success">Available</span>
-                    @else
-                    <span class="badge bg-danger">Not Available</span>
-                    @endif
+
+                <button class="btn {{ $room->available ? 'btn-available' : 'btn-unavailable' }}">
+                    {{ $room->available ? 'Available' : 'Not Available' }}
                 </button>
+
             </div>
         </div>
         @empty
@@ -42,12 +41,21 @@
 
     document.querySelectorAll('.bookingBtn').forEach(button => {
         button.addEventListener('click', function(e) {
+            const isAvailable = this.dataset.available === '1';
+            const roomName = this.dataset.roomName;
+
             if (userRole === 'guest') {
-                e.preventDefault();
-                alert('Please log in first to request a room reservation.');
-            } else {
-                window.location.href = "/apply";
+                alert('Please log in first to submit a room reservation request.');
+                return;
             }
+
+            if (!isAvailable) {
+                alert(`The room "${roomName}" is currently unavailable due to maintenance or scheduling. Please choose another room.`);
+                return;
+            }
+
+            // Redirect hanya jika room tersedia dan user bukan guest
+            window.location.href = `/apply?room_name=${encodeURIComponent(roomName)}`;
         });
     });
 </script>

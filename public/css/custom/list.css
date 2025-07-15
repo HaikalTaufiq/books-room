@@ -88,6 +88,23 @@ body {
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
+.btn-available {
+    background-color: #28a745; /* hijau */
+    color: #fff;
+}
+
+.btn-available:hover {
+    background-color: #218838;
+}
+
+.btn-unavailable {
+    background-color: #dc3545; /* merah */
+    color: #fff;
+}
+
+.btn-unavailable:hover {
+    background-color: #c82333;
+}
 
 .btn-primary {
     background-color: #04045c;

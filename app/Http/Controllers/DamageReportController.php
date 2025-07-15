@@ -22,7 +22,18 @@ class DamageReportController extends Controller
             ->where('status', 'approved')
             ->groupBy('room_name')
             ->get();
-        return view('reports.report', compact('damageReports', 'rooms', 'usages', 'roomUsageData'));
+
+        $latestBooking = RoomBooking::where('user_id', Auth::id())
+            ->latest('created_at')
+            ->first();
+
+        return view('reports.report', compact(
+            'damageReports',
+            'rooms',
+            'usages',
+            'roomUsageData',
+            'latestBooking'
+        ));
     }
 
 
