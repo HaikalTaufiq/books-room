@@ -1,0 +1,11 @@
+[build]
+command = "composer install --no-dev"
+
+[start]
+command = "php artisan serve --host=0.0.0.0 --port=${PORT}"
+
+[deploy]
+command = """
+php artisan migrate --force
+php artisan storage:link
+"""
